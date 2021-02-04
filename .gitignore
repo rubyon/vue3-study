@@ -1,6 +1,10 @@
 .DS_Store
 node_modules
 /dist
+/app/public
+yarn.lock
+package-lock.json
+Gemfile.lock
 
 
 # local env files
