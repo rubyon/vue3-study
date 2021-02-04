@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import * as fooApi from '@/api/foobar'
 
 export default {
   name: 'axios',
@@ -20,14 +20,26 @@ export default {
   },
   mounted() {
     const vm = this
-    axios
-      .get('http://localhost:8080/api/getFoo')
-      .then(function (response) {
-        vm.foo = response.data.foo
+    fooApi
+      .getFoo()
+      .then((response) => {
+        vm.foo = response.data
       })
-      .catch(function (error) {
-        alert(error)
+      .catch((error) => {
+        console.log(error)
       })
   }
+  // methods() {
+  //   login() {
+  //     fooApi
+  //       .login( this.userid, this.password )
+  //       .then(response => {
+  //         console.log(response.data)
+  //       })
+  //       .catch(error => {
+  //         console.log(error)
+  //       })
+  //   }
+  // }
 }
 </script>
