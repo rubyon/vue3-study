@@ -1,8 +1,9 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <h2>API Server BaseURL: {{ apiServer }}</h2>
     <span>
-      <a href="http://localhost:8080/api/getFoo">http://localhost:8080/api/getFoo</a> Json result:
+      {{ apiServer }}/api/getFoo Json result:
       {{ foo }}
     </span>
   </div>
@@ -15,7 +16,8 @@ export default {
   name: 'axios',
   data() {
     return {
-      foo: ''
+      foo: '',
+      apiServer: process.env.VUE_APP_API_SERVER
     }
   },
   mounted() {
