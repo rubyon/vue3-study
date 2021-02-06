@@ -1,0 +1,22 @@
+FROM ruby:3.0-alpine
+LABEL maintainer "RubyOn <rubyon@me.com>"
+
+RUN apk update && apk upgrade
+
+RUN apk add build-base nodejs yarn
+
+RUN gem install bundler
+
+WORKDIR /app
+
+COPY Gemfile /app
+
+RUN bundle install
+
+COPY . /app
+
+RUN yarn dev
+
+EXPOSE 8080
+
+CMD ["sh","start_dev.sh"]

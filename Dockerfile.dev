@@ -21,7 +21,7 @@ RUN bundle install
 
 COPY . /app
 
-RUN yarn build
+RUN yarn dev
 
 EXPOSE 8080
 
