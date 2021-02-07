@@ -4,6 +4,11 @@ require 'sinatra/namespace'
 require 'sinatra/routes'
 require 'sinatra/cross_origin'
 require 'require_all'
+require 'sequel'
+require 'multi_json'
+require './config/database'
+require './config/create_table'
+require_all 'models'
 
 # api server
 class App < Sinatra::Base
@@ -38,6 +43,12 @@ class App < Sinatra::Base
   not_found do
     File.read(File.join('public', 'index.html'))
   end
+end
+
+def json_params
+  JSON.parse(request.body.read)
+rescue StandardError
+  halt 400, { result: 'Invalid JSON' }.to_json
 end
 
 require_all 'routes'

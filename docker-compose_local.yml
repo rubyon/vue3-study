@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+
+  vue3-study-db_local:
+    container_name: vue3-study-db_local
+    image: mariadb:10.5.8
+    restart: unless-stopped
+    networks:
+      - backend_dev
+    ports:
+      - 13306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "98010~!@"
+      MYSQL_DATABASE: vue3-study
+    volumes:
+      - /Users/rubyon/docker/vue3-study-db_local:/var/lib/mysql
+
+networks:
+  frontend_dev:
+  backend_dev:

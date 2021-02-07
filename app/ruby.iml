@@ -11,6 +11,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-protection (v2.1.0, rbenv: 3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="require_all (v3.0.0, rbenv: 3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby2_keywords (v0.0.4, rbenv: 3.0.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sequel (v5.41.0, rbenv: 3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra (v2.1.0, rbenv: 3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-contrib (v2.1.0, rbenv: 3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-cross_origin (v0.4.0, rbenv: 3.0.0) [gem]" level="application" />

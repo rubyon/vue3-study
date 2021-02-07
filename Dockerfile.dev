@@ -1,25 +1,21 @@
-FROM ruby:3.0
+FROM ruby:3.0-alpine
 LABEL maintainer "RubyOn <rubyon@me.com>"
 
-ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+RUN apk update && apk upgrade
 
-RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
-RUN apt-get update -qq && apt-get install -qq --no-install-recommends nodejs \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN apk add build-base nodejs yarn mariadb-dev
 
-RUN npm install -g yarn
+RUN gem install bundler
 
 WORKDIR /app
 
 COPY Gemfile /app
 
-RUN gem install bundler
-
 RUN bundle install
 
 COPY . /app
+
+RUN rm -rf config/database.rb && cp app/db/development_database.rb app/config/database.rb
 
 RUN yarn dev
 

@@ -6,4 +6,7 @@ gem 'sinatra-cross_origin'
 gem 'sinatra-routes'
 gem 'foreman'
 gem 'require_all'
-gem "puma"
+gem 'sequel'
+gem 'mysql2'
+gem 'multi_json'
+gem 'puma'
