@@ -1,7 +1,12 @@
 routes do
   namespace '/api/getUser' do
     post '' do
-      MultiJson.dump(result: User.all.map(&:to_api))
+      result = JSON.parse(request.body.read)
+      list_count = result['perpage'].to_i
+      first_item = result['page'].to_i * list_count - list_count
+      last_item = result['page'].to_i * list_count - 1
+      user = User.order(Sequel.desc(:id)).limit(first_item..last_item)
+      MultiJson.dump(result: user.map(&:to_api))
     end
 
     post '/find' do
