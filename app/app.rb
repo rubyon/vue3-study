@@ -1,5 +1,3 @@
-require 'random_name_generator'
-
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/namespace'
@@ -54,12 +52,3 @@ rescue StandardError
 end
 
 require_all 'routes'
-
-# 10000.times do
-#   user = User.new
-#   rng = RandomNameGenerator.new(RandomNameGenerator::ROMAN)
-#   name =  rng.compose(3)
-#   user.name = name
-#   user.email = "#{name}@example.com"
-#   user.save
-# end

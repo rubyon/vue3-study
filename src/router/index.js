@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Element from '../views/Element.vue'
+import Infinite from '../views/Infinite.vue'
+import Test from '../views/Test.vue'
 
 const routes = [
   {
@@ -17,9 +19,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/Element',
+    path: '/element',
     name: 'Element',
     component: Element
+  },
+  {
+    path: '/infinite',
+    name: 'Infinite',
+    component: Infinite
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
   }
 ]
 

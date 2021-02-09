@@ -1,5 +1,5 @@
 <template>
-  <div class="element">
+  <div class="element" align="center">
     <el-container>
       <el-main>
         <el-form :inline="true" :model="formInline" class="demo-form-inline">
@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       pageSizes: [10, 25, 50, 100],
-      pageSize: 10,
+      pageSize: 25,
       currentPage: 1,
       usersCount: '',
       tableStructure: [
@@ -97,6 +97,7 @@ export default {
         })
     },
     handleCurrentChange(val) {
+      window.scrollTo(0, 0)
       getUserAPI
         .getUser(val, this.pageSize)
         .then((response) => {
@@ -110,6 +111,7 @@ export default {
     handleSizeChange(val) {
       this.pageSize = val
       this.getUserDo(this.pageSize)
+      this.currentPage = 1
     },
     onSubmit() {
       console.log('submit!')
@@ -130,3 +132,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.el-container {
+  width: 800px;
+}
+.el-table td,
+.el-table th {
+  padding: 6px;
+}
+</style>

@@ -10,5 +10,3 @@ gem 'sequel'
 gem 'mysql2'
 gem 'multi_json'
 gem 'puma'
-
-gem 'random_name_generator'
