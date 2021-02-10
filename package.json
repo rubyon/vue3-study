@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "foreman start",
     "serve": "vue-cli-service serve --mode localhost",
     "dev": "vue-cli-service build --mode development",
     "build": "vue-cli-service build --mode production",
@@ -10,12 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
-    "datatables.net-bs4": "^1.10.23",
     "element-plus": "^1.0.2-beta.31",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1",
     "vue": "^3.0.5",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
